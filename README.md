@@ -3,8 +3,7 @@ A module for reacting to [git webhooks](https://developer.github.com/webhooks/).
 
 
 
-```
-
+```javascript
 const GitWebhooks = require('git-webhooks')
 
 new GitWebhooks({
