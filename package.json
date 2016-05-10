@@ -1,28 +1,26 @@
 {
-  "name": "git-webhooks",
+  "name": "git-web-hooks",
   "version": "0.0.1",
-  "description": "React to git hooks.",
+  "description": "React to git webhooks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/positlabs/git-webhooks.git"
+    "url": "git+https://github.com/positlabs/git-web-hooks.git"
   },
   "keywords": [
     "git",
     "hooks",
     "webhooks",
     "push-to-deploy",
-    "CI",
-    "unit",
-    "tests"
+    "post-receive"
   ],
   "author": "Josh Beckwith <josh@positlabs.com> (https://github.com/positlabs)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/positlabs/git-webhooks/issues"
+    "url": "https://github.com/positlabs/git-web-hooks/issues"
   },
-  "homepage": "https://github.com/positlabs/git-webhooks#readme"
+  "homepage": "https://github.com/positlabs/git-web-hooks#readme"
 }
