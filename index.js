@@ -5,10 +5,10 @@ const http = require('http')
 const util = require('util')
 const exec = require('child_process').exec
 
-function GitHooks(options) {
+function GitWebhooks(options) {
 	EventEmitter.call(this)
 
-	// console.log('GitHooks.createServer', options)
+	// console.log('GitWebhooks.createServer', options)
 	options.PORT = options.PORT || 3333
 
 	var server = http.createServer((request, response) => {
@@ -28,19 +28,18 @@ function GitHooks(options) {
 	})
 
 	server.listen(options.PORT, () => {
-		// console.log("Server listening on: http://localhost:%s", options.PORT)
 		this.emit('listening', options.PORT)
 	})
 
 	this.server = server
 }
-util.inherits(GitHooks, EventEmitter);
+util.inherits(GitWebhooks, EventEmitter);
 
 /*
 	runs a command on the command line
 */
-GitHooks.command = function(commandString){
-	console.log('GitHooks.command', commandString)
+GitWebhooks.command = function(commandString){
+	console.log('GitWebhooks.command', commandString)
 
 	return new Promise((resolve, reject) => {
 		exec(commandString, (error, stdout, stderr) => {
@@ -55,4 +54,4 @@ GitHooks.command = function(commandString){
 	})
 }
 
-module.exports = GitHooks
+module.exports = GitWebhooks

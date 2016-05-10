@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const GitHooks = require('../index')
+const GitWebhooks = require('../index')
 
-new GitHooks({
+new GitWebhooks({
 
 	PORT: 3333
 
@@ -12,11 +12,11 @@ new GitHooks({
 
 	// now do some things on the command line!
 	// first, pull the new changes
-	GitHooks.command('git pull')
+	GitWebhooks.command('git pull')
 		.then((stdout) => {
 
 			// install npm dependencies
-			return GitHooks.command('npm install')
+			return GitWebhooks.command('npm install')
 			
 		}).then((stdout) => {
 

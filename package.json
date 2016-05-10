@@ -1,5 +1,5 @@
 {
-  "name": "git-hooks",
+  "name": "git-webhooks",
   "version": "0.0.1",
   "description": "React to git hooks.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/positlabs/git-hooks.git"
+    "url": "git+https://github.com/positlabs/git-webhooks.git"
   },
   "keywords": [
     "git",
@@ -22,7 +22,7 @@
   "author": "Josh Beckwith <josh@positlabs.com> (https://github.com/positlabs)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/positlabs/git-hooks/issues"
+    "url": "https://github.com/positlabs/git-webhooks/issues"
   },
-  "homepage": "https://github.com/positlabs/git-hooks#readme"
+  "homepage": "https://github.com/positlabs/git-webhooks#readme"
 }
