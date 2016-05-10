@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const GitHooks = require('../index')
+const GitWebhooks = require('../index')
 
-GitHooks.command('echo "running a command now!"').then((stdout) => {
+GitWebhooks.command('echo "running a command now!"').then((stdout) => {
 
 	console.log(stdout)
-	return GitHooks.command('echo "running another command now!"')
+	return GitWebhooks.command('echo "running another command now!"')
 
 }).then((stdout) => {
 
 	console.log(stdout)
-	return GitHooks.command('echo "running yet another command now!"')
+	return GitWebhooks.command('echo "running yet another command now!"')
 
 }).then((stdout) => {
 
