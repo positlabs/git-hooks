@@ -1,0 +1,28 @@
+{
+  "name": "git-hooks",
+  "version": "0.0.1",
+  "description": "React to git hooks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/positlabs/git-hooks.git"
+  },
+  "keywords": [
+    "git",
+    "hooks",
+    "webhooks",
+    "push-to-deploy",
+    "CI",
+    "unit",
+    "tests"
+  ],
+  "author": "Josh Beckwith <josh@positlabs.com> (https://github.com/positlabs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/positlabs/git-hooks/issues"
+  },
+  "homepage": "https://github.com/positlabs/git-hooks#readme"
+}
