@@ -1,6 +1,7 @@
-# git-webhooks
+# git-web-hooks
 A module for reacting to [git webhooks](https://developer.github.com/webhooks/).
 
+[![NPM](https://nodei.co/npm/git-web-hooks.png)](https://npmjs.org/package/git-web-hooks)
 
 
 ```javascript
