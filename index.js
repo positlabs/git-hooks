@@ -11,8 +11,22 @@ function GitWebhooks(options) {
 	// console.log('GitWebhooks.createServer', options)
 	options.PORT = options.PORT || 3333
 
-	var server = http.createServer((request, response) => {
-		console.log('requesting...', request.url)
+	this._lastPayload = {state: 'no payload received'}
+
+	var server = http.createServer(this._requestHandler.bind(this))
+
+	server.listen(options.PORT, () => {
+		this.emit('listening', options.PORT)
+	})
+
+	this.server = server
+}
+util.inherits(GitWebhooks, EventEmitter);
+
+GitWebhooks.prototype._requestHandler = function(request, response){
+	// console.log('requesting...', request.url, request.method)
+
+	if(request.method === 'POST'){
 
 		var payload = []
 		request.on('data', (chunk) => {
@@ -22,18 +36,18 @@ function GitWebhooks(options) {
 			
 			payload = Buffer.concat(payload).toString()
 			payload = JSON.parse(payload)
+
+			this._lastPayload = payload
+			this._lastPayload._timestamp = new Date().toLocaleString()
+			
 			this.emit('payload', request, response, payload)
 
 		}).on('error', console.error)
-	})
 
-	server.listen(options.PORT, () => {
-		this.emit('listening', options.PORT)
-	})
-
-	this.server = server
+	}else{
+		response.end(JSON.stringify(this._lastPayload))
+	}
 }
-util.inherits(GitWebhooks, EventEmitter);
 
 /*
 	runs a command on the command line
