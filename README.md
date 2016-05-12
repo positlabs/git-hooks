@@ -6,7 +6,7 @@ A module for reacting to [git webhooks](https://developer.github.com/webhooks/).
 **Example**
 
 ```javascript
-const GitWebhooks = require('git-webhooks')
+const GitWebhooks = require('git-web-hooks')
 
 new GitWebhooks({
 
