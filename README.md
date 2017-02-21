@@ -17,7 +17,7 @@ new GitWebhooks({
 	// do something based on payload contents
 	
 	// then send a response to github
-	res.send('got it!')
+	res.end('got it!')
 
 })
 
