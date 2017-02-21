@@ -51,11 +51,17 @@ GitWebhooks.prototype._requestHandler = function(request, response){
 }
 
 /*
-	runs a command on the command line
+	runs a command on the command line via child_process.exec
+
+	commandString:String 
+		the command to run
+
+	options:Object 
+		options object to pass to child_process.exec
 */
-GitWebhooks.command = function(commandString){
+GitWebhooks.command = function(commandString, options = {}){
 	return new Promise((resolve, reject) => {
-		exec(commandString, (error, stdout, stderr) => {
+		exec(commandString, options, (error, stdout, stderr) => {
 			if(error) {
 				reject(error)
 				return
