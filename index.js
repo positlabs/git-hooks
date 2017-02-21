@@ -44,8 +44,9 @@ GitWebhooks.prototype._requestHandler = function(request, response){
 
 		}).on('error', console.error)
 
-	}else{
-		response.end(JSON.stringify(this._lastPayload))
+	}else if(request.method === 'GET'){
+		this.emit('get', request, response, this._lastPayload)
+		// response.end(JSON.stringify(this._lastPayload))
 	}
 }
 
@@ -53,17 +54,13 @@ GitWebhooks.prototype._requestHandler = function(request, response){
 	runs a command on the command line
 */
 GitWebhooks.command = function(commandString){
-	console.log('GitWebhooks.command', commandString)
-
 	return new Promise((resolve, reject) => {
 		exec(commandString, (error, stdout, stderr) => {
 			if(error) {
-				// console.error('ERROR', error.message)
 				reject(error)
 				return
 			}
-			// console.log('stdout', stdout)
-			resolve(stdout)
+			resolve({out: stdout, err: stderr})
 		})
 	})
 }

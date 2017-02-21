@@ -13,12 +13,12 @@ new GitWebhooks({
 	// now do some things on the command line!
 	// first, pull the new changes
 	GitWebhooks.command('git pull')
-		.then((stdout) => {
+		.then(std => {
 
 			// install npm dependencies
 			return GitWebhooks.command('npm install')
 			
-		}).then((stdout) => {
+		}).then(std => {
 
 			// NOTE: might need to restart your webserver at this point, depending on your configuration
 
